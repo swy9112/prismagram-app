@@ -2,7 +2,7 @@ import React from "react";
 import { View } from "react-native";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import { createStackNavigator } from "react-navigation-stack";
-import Home from "../screens/Auth/Home";
+import AuthHome from "../screens/Auth/AuthHome";
 import Search from "../screens/Auth/Search";
 import Notifications from "../screens/Auth/Notifications";
 import Profile from "../screens/Auth/Profile";
@@ -13,7 +13,7 @@ const stackFactory = (initialRoute, customConfig) =>
 
 export default createBottomTabNavigator({
   Home: {
-    screen: stackFactory(Home, {
+    screen: stackFactory(AuthHome, {
       title: "Home",
       headerRight: () => <MessagesLink />
     })

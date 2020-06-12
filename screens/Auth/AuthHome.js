@@ -13,27 +13,38 @@ const Image = styled.Image`
   margin-bottom: 20px;
 `;
 
-const ButtonContaniner = styled.TouchableOpacity``;
-const Button = styled.View`
+const Touchable = styled.TouchableOpacity``;
+const SignUpBtn = styled.View`
   width: ${constants.width / 2};
   padding: 10px;
   margin: 0 50px;
+  margin-bottom: 25px;
   background-color: ${props => props.theme.blueColor};
   border-radius: 4px;
 `;
-const ButtonText = styled.Text`
+const SignUpBtnText = styled.Text`
   color: white;
   text-align: center;
   font-weight: 600;
 `;
 
+const LoginLink = styled.View``;
+const LoginLinkText = styled.Text`
+  color: ${props => props.theme.blueColor};
+`;
+
 export default ({ navigation }) => (
   <View>
     <Image resizeMode={"contain"} source={require("../../assets/logo.png")} />
-    <ButtonContaniner onPress={() => navigation.navigate("Signup")}>
-      <Button>
-        <ButtonText>Create New Account</ButtonText>
-      </Button>
-    </ButtonContaniner>
+    <Touchable onPress={() => navigation.navigate("Signup")}>
+      <SignUpBtn>
+        <SignUpBtnText>Create New Account</SignUpBtnText>
+      </SignUpBtn>
+    </Touchable>
+    <Touchable onPress={() => navigation.navigate("Login")}>
+      <LoginLink>
+        <LoginLinkText>Log in</LoginLinkText>
+      </LoginLink>
+    </Touchable>
   </View>
 );
